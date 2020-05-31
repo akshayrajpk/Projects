@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+<button class="login100-form-btn" onclick="connectme()">
+								Login
+							</button>
+							<script type="text/javascript">
+	
+	function connectme()
+	{
+	
+	//alert("Thanks... I feel much better now!");
+	var mysql = require('mysql');
+
+	var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "mysql"
+});
+
+con.connect(function(err) {
+  if (err)
+{
+  //throw err;
+  alert("Thanks... I feel much better now!");
+  }
+  //console.log("Connected!");
+  alert("Thanks... I feel much better now!");
+});
+
+}
+	
+	</script>
+	</body>
+	</html>
