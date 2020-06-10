@@ -1,0 +1,408 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Market One Landing</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
+    <!-- Icon -->
+    <link rel="stylesheet" href="assets/fonts/line-icons.css">
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/mostyle.css">
+
+    <!-- Responsive Style -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <script>
+      var firstName;
+      var LastName;
+      var title;
+      var email;
+      var phone;
+      var optionSelected;
+
+      //Validate user inputs in the name textbox
+      function validateName(element, events) {
+            var charCode = (events.which) ? events.which : event.keyCode;
+            if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode == 46))
+                return false;
+        }
+      
+      //Validate user inputs in the phone textbox
+      function validatePhone(element, events) {
+            var charCode = (events.which) ? events.which : event.keyCode;
+            if (charCode < 48 || charCode > 57)
+                 return false;
+            var digits = document.getElementById('phone');
+            if (digits.value.length >= 10)
+                return false;
+          }
+
+      //Function to obtain the contents of UI elements (user inputs).
+      function readInputData() {
+          firstName = document.getElementById("firstName").value;
+          LastName = document.getElementById("LastName").value;
+          title = document.getElementById("title").value;
+          email = document.getElementById("email").value;
+          phone = document.getElementById("phone").value;
+          var dropDown = document.getElementById("clientSelection");
+          optionSelected = dropDown.options[dropDown.selectedIndex].value;
+        }
+      
+      //function to check input fields and generate alerts
+      function checkInputdata(){
+        if(firstName == ""){
+          document.getElementById("firstName").required = true;
+        }
+        if(LastName == ""){
+          document.getElementById("LastName").required = true;
+        }
+        if(title == ""){
+          document.getElementById("title").required = true;
+        }
+        if(email == ""){
+          document.getElementById("email").required = true;
+        }
+        if(phone == ""){
+          document.getElementById("phone").required = true;
+        }
+        if(optionSelected == "default"){
+          document.getElementById("clientSelection").required = true;
+        }
+      }
+
+      //Function to validate form inputs
+      function validateForm(){
+          readInputData();
+          if(firstName == "" || LastName == "" || title == "" || email == "" || phone == "" ){
+              alert('All the fields are mandatory');
+              checkInputdata();
+          }
+          else {
+                if (!(email.match(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/))){
+                      alert('Enter a valid Email ID');
+                      document.getElementById("email").focus();
+                      return;
+                  }
+                  if (!(phone.match(/^[0-9]{10}$/))){
+                      alert('Enter a valid Phone Number');
+                      document.getElementById("phone").focus();
+                      return;
+                  }
+                if(optionSelected == "default"){
+                    alert('Select a valid option');
+                    document.getElementById("clientSelection").focus();  
+                    return;         
+                }
+            }
+        }
+
+      //Function to dynamically change the size of the logo
+      function logoChange(){
+        var windowWidth= window.innerWidth;
+        if(windowWidth <= 480){
+          document.getElementById("logo").src = "assets/img/logo_small.png";
+        }
+        else if(windowWidth <= 768 && windowWidth >= 481){
+          document.getElementById("logo").src = "assets/img/logo_medium.png";
+        }
+        else
+          document.getElementById("logo").src = "assets/img/logo_large.png";
+      }
+    </script>
+
+  </head>
+  
+  <body onresize="logoChange();" onload="logoChange()">
+
+    <div class="container" id="banner">
+      <a href="index.html" class="navbar-brand"><div><img id="logo" src="assets/img/logo_large.png" alt="Logo"></div></a>
+    </div> 
+
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+        <div class="container" id="navbarBg">
+          <!-- Brand and toggle get grouped for better mobile display -->        
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+              <li class="nav-item active">
+                <a class="nav-link" href="#hero-area">
+                  ABOUT US <img id="mobileLinkArrow" src="assets/img/mobile_link_arrow.png">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">
+                  SERVICES <img id="mobileLinkArrow" src="assets/img/mobile_link_arrow.png">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team">
+                  PORTFOLIO <img id="mobileLinkArrow" src="assets/img/mobile_link_arrow.png">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">
+                  CONTACT US <img id="mobileLinkArrow" src="assets/img/mobile_link_arrow.png">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- Navbar End -->
+    </header>
+    <!-- Header Area wrapper End -->
+      
+    <!-- Hero Area Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-6">
+            <div id="hero-area" class="hero-area-bg">
+              <div class="container">      
+                <div class="row">
+                    <div class="contents">
+                      <h1 class="head-title">Welcome</h1>
+                        <div>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>                  
+                </div> 
+              </div> 
+            </div>
+          <!-- Hero Area End -->
+  
+          <!-- Team Section Start -->
+            <section id="team" class="section-padding bg-gray">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12 col-xs-12">
+                    <!-- Team Item Starts -->
+                    <div class="team-item wow fadeInRight">
+                      <div class="team-img">
+                        <img class="img-fluid" src="assets/img/team/profile_1.jpg" alt="">
+                      </div>
+                      <div class="contetn">
+                        <div class="info-text">
+                          <h3>Salvador Martin</h3>
+                          <p>Developer</p>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
+                        <a id="teamLink" href="#">READ MORE <img src="assets/img/cta_arrow.png"></a>
+                      </div>
+                    </div>
+                    <!-- Team Item Ends -->
+                  </div>
+                  <div class="col-lg-6 col-md-12 col-xs-12">
+                    <!-- Team Item Starts -->
+                    <div class="team-item wow fadeInRight" data-wow-delay="0.4s">
+                      <div class="team-img">
+                        <img class="img-fluid" src="assets/img/team/profile_2.jpg" alt="">
+                      </div>
+                      <div class="contetn">
+                        <div class="info-text">
+                          <h3>Dimitri Mostovoi</h3>
+                          <p>Designer</p>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
+                        <a id="teamLink" href="#">READ MORE <img src="assets/img/cta_arrow.png"></a>
+                      </div>
+                    </div>
+                  <!-- Team Item Ends -->
+                </div>
+              </div>
+            </section>
+            <!-- Team Section End -->
+          </div>
+          <div class="col-12 col-sm-6 col-md-6">
+              <!-- Contact Section Start -->
+              <section id="contact" class="section-padding bg-gray">    
+                <div class="container">
+                  <div class="section-header text-center">          
+                    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Contact Us</h2>
+                  </div>
+                  <div class="contact-form-area wow fadeInUp" data-wow-delay="0.3s">   
+                    <div>
+                      <div class="contact-block">
+                        <form id="contactForm">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" data-error="Please enter your First Name" onkeypress="return validateName(this,event);">
+                                <div class="help-block with-errors"></div>
+                              </div>                                 
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name" data-error="Please enter your Last Name" onkeypress="return validateName(this,event);">
+                                <div class="help-block with-errors"></div>
+                              </div>                                 
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Title" data-error="Please enter tht title">
+                                <div class="help-block with-errors"></div>
+                              </div>                                 
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input type="text" placeholder="Email Address" id="email" class="form-control" name="email" data-error="Please enter your Email Address">
+                                <div class="help-block with-errors"></div>
+                              </div> 
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input type="text" placeholder="Phone" id="phone" class="form-control"  data-error="Please enter your Phone Number" onkeypress="return validatePhone(this,event);">
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group"> 
+                                <label style="color: #333333;">Already a client?</label>
+                                <select class="form-control" id="clientSelection" required data-error="Please select a valid option">
+                                  <option value="default">- Please Select -</option>
+                                  <option value="yes">Yes</option>
+                                  <option value="no">No</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                              <div class="submit-button text-left">
+                                <button class="btn btn-common" id="form-submit" type="submit" onclick="validateForm();">Contact Us</button>
+                                <div class="clearfix"></div> 
+                              </div>
+                            </div>
+                          </div>            
+                        </form>
+                      </div>
+                    </div>                    
+                  </div>
+                </div> 
+              </section>
+            <!-- Contact Section End -->
+          </div>
+        </div>
+      </div>       
+
+    <!-- Services Section Start -->
+    <section id="services" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Our Services</h2>
+          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+        </div>
+        <div class="row">
+          <!-- Services item -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
+             <a href="https://www.marketone.com/capabilities/marketing-technology"> 
+               <div class="icon">
+                <i class="lni-cog"></i>
+              </div>
+              <div class="services-content">
+                <h3>Marketing Technology</h3>
+              </a>
+                <p>Marketing automation platform implementation and integration services from the experts. </p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="services-item wow fadeInRight" data-wow-delay="0.6s">
+              <a href="https://www.marketone.com/capabilities/data-and-analytics"> 
+              <div class="icon">
+                <i class="lni-stats-up"></i>
+              </div>
+              <div class="services-content">
+                <h3>Data, Reporting & Analytics</h3></a>
+                <p>Helping companies to uncover opportunities in customer data. </p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="services-item wow fadeInRight" data-wow-delay="0.9s">
+              <a href="https://www.marketone.com/capabilities/teleservices-live-chat"> 
+              <div class="icon">
+                <i class="lni-users"></i>
+              </div>
+              <div class="services-content">
+                <h3>Teleservices & Live Chat</h3></a>
+                <p>High-quality global resource to help clients create demand, qualify leads and boost sales. </p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="services-item wow fadeInRight" data-wow-delay="1.2s">
+              <a href="https://www.marketone.com/capabilities/digital-marketing"> 
+              <div class="icon">
+                <i class="lni-layers"></i>
+              </div>
+              <div class="services-content">
+                <h3>Marketing Automation Services</h3></a>
+                <p>Your business to business customer engagement agency. </p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="services-item wow fadeInRight" data-wow-delay="1.5s">
+              <a href="https://www.marketone.com/capabilities/training-enablement"> 
+              <div class="icon">
+                <i class="lni-mobile"></i>
+              </div>
+              <div class="services-content">
+                <h3>Training & Enablement</h3></a>
+                <p>Standard and custom training options for marketing planning and hands-on execution. </p>
+              </div>
+            </div>
+          </div>
+          <!-- Services item -->
+          <div class="col-md-6 col-lg-4 col-xs-12">
+            <div class="services-item wow fadeInRight" data-wow-delay="1.8s">
+              <a href="https://www.marketone.com/capabilities/strategy"> 
+              <div class="icon">
+                <i class="lni-rocket"></i>
+              </div>
+              <div class="services-content">
+                <h3>Strategy & Planning</h3></a>
+                <p>Helping companies use data and technology to transform their communications and operations. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Footer Section Start -->
+    <footer id="footer" class="footer-area section-padding">
+      <div id="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="copyright-content">
+                <p><i>Copyright © 2013 MarketOne International. All Right Reserved</i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </footer> 
+    <!-- Footer Section End -->     
+    
+    <!-- Inport Required support scripts for design and menu -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

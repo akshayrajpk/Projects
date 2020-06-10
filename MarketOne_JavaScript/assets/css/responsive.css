@@ -1,0 +1,162 @@
+/* only small desktops */
+@media (min-width: 769px) and (max-width: 980px) {
+  #hero-area .contents .head-title {
+    font-size: 28px;
+  }
+  .services-item .services-content h3 a {
+    font-size: 16px;
+  }
+  .team-item .contetn {
+    padding: 15px 50px;
+  }
+  #banner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: relative;
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0 50px;
+  background-image: url(../img/banner_large.jpg);
+  }
+}
+
+
+/* only small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .services-item .services-content h3 a {
+    font-size: 16px;
+  }
+  .bg-inverse {
+    background: #fff !important;
+    box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.06);
+  }
+  .navbar-expand-md .navbar-nav .nav-link {
+    margin-bottom: 0;
+    margin-top: 0; 
+  }
+  .title-hl {
+    font-size: 30px;
+  }
+  .text-wrapper {
+    padding: 60px 30px;
+  }
+  #banner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: relative;
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0 50px;
+  background-image: url(../img/banner_medium.jpg);
+  }
+  
+  #mobileLinkArrow{
+	display: block;
+	position: right;
+	transform: rotate(270deg);
+	float: right;
+  }
+}
+
+/* mobile or only mobile */
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 20px 0;
+  }
+  .section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .navbar-expand-md .navbar-brand,
+  .navbar-expand-md .navbar-toggler {
+    margin: 0px 15px;
+  }
+  #mobileLinkArrow{
+	display: block;
+	position: right;
+	transform: rotate(270deg);
+	float: right;
+  }
+  .bg-inverse {
+    background: #fff !important;
+    box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.06);
+  }
+  .navbar-expand-md .navbar-nav .nav-link {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .navbar-brand img {
+    margin: 5px 0;
+  }
+  .intro-img {
+    margin-top: 20px;
+  }
+  #hero-area .contents .head-title {
+    font-size: 22px;
+    line-height: 36px;
+    margin-bottom: 7px;
+  }
+  #hero-area .contents p {
+    font-size: 14px;
+  }
+  #hero-area {
+    padding: 10px 0 5px;
+  }
+  .text-wrapper {
+    padding: 60px 15px;
+  }
+  .client-item-wrapper img {
+    width: 50%;
+  }
+  #cta h4 {
+    font-size: 22px;
+  }
+  #cta .text-right {
+    float: left !important;
+  }
+  #cta .btn {
+    float: left;
+  }
+  .team-item .team-img {
+    width: relative;
+    float: left;
+  }
+  .team-item .contetn {
+    padding: 15px 30px;
+  }
+  .footer-right-contact .single-contact {
+    margin: 10px 7px;
+    padding: 3px 45px;
+  }
+  .contact-form-area h2 {
+    font-size: 14px;
+  }
+  .copyright .float-right {
+    float: left !important;
+  }
+  .map {
+    margin-top: 20px;
+  }
+  #cta {
+    padding: 20px 0;
+  }
+  .cta-text {
+    margin-bottom: 30px;
+  }
+  #banner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: relative;
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0 50px;
+  background-image: url(../img/banner_small.jpg);
+  }
+}
