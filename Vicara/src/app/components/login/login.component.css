@@ -1,0 +1,49 @@
+.div {
+    width: 350px;
+    background: rgb(240, 241, 243);
+    border-radius: 10px;
+    overflow: auto;
+    padding: 42px 55px 45px 55px;
+}
+
+.maindiv {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.input {
+    width: 75%;
+    background: white;
+    font-family: Poppins-Medium;
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.2;
+    padding: 0 5px;
+}
+
+.btn {
+    background: rgb(38, 176, 87);
+    font-family: Poppins-Medium;
+    padding: 5px 15px;
+    font-size: 18px;
+    color: rgb(250, 250, 250);
+    border-radius: 10px;
+    width: 50%;
+    height: 50px;
+    align-items: center;
+}
+
+.title {
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 39px;
+    color: #000000;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 40px;
+}

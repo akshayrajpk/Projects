@@ -1,0 +1,20 @@
+<div class="maindiv" style="padding-top:0px;">
+    <div class=" div">
+
+        <form (ngSubmit)="login()">
+            <span class="title">Log in</span>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="input" name="email" placeholder="Enter email"
+                    [(ngModel)]="credentials.email">
+            </div><br>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="input" name="password" placeholder="Password"
+                    [(ngModel)]="credentials.password">
+            </div>
+            <br>
+            <button type="submit" class="btn">Sign in</button>
+        </form>
+    </div>
+</div>
