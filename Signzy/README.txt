@@ -1,3 +1,5 @@
+Video Player (Amazon Prime Clone)
+
 Application is built using Express Server and Java Script.
 
 Run npm install to install the dependencies
